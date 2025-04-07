@@ -1,18 +1,51 @@
-## Getting Started
+# 💳 Banco Digital Bradesco (Simulado)
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Sistema de gerenciamento bancário simples desenvolvido em Java. Ele permite o cadastro de clientes, login seguro e operações como depósitos, saques, transferências, empréstimos e visualização de extratos das contas Corrente e Poupança.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 🚀 Funcionalidades
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Cadastro de novos clientes
+- Autenticação por nome e senha
+- Conta Corrente e Conta Poupança vinculadas ao cliente
+- Depósito em conta corrente
+- Saque da conta corrente
+- Transferência da conta corrente para poupança
+- Solicitação de empréstimo com limite de R$ 500,00
+- Visualização de saldo
+- Impressão de extratos bancários
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 📌 Estrutura do Projeto
 
-## Dependency Management
+BancoDigital/ ├── SistemaBanco.java ├── Cliente.java ├── Conta.java ├── ContaCorrente.java ├── ContaPoupanca.java
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- Java (JDK 17 ou superior)
+- Scanner para entrada de dados via console
+- Programação orientada a objetos (POO)
+
+---
+
+## 🏁 Como Executar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/BancoDigital.git
+   cd BancoDigital
+
+Compile o código:
+javac *.java
+
+Execute a aplicação:
+java SistemaBanco
+
+
+✍️ Autor
+Desenvolvido por Renato Boranga 🚀
