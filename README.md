@@ -1,51 +1,77 @@
-# 💳 Banco Digital Bradesco (Simulado)
+# BancoDigital
 
-Sistema de gerenciamento bancário simples desenvolvido em Java. Ele permite o cadastro de clientes, login seguro e operações como depósitos, saques, transferências, empréstimos e visualização de extratos das contas Corrente e Poupança.
+Aplicação Java de console criada para praticar orientação a objetos por meio de contas, operações e extratos bancários simulados.
 
----
+## Contexto
 
-## 🚀 Funcionalidades
+O projeto registra uma etapa anterior da minha evolução em Java. Ele não é uma API, não possui persistência e não representa um sistema bancário pronto para produção.
 
-- Cadastro de novos clientes
-- Autenticação por nome e senha
-- Conta Corrente e Conta Poupança vinculadas ao cliente
-- Depósito em conta corrente
-- Saque da conta corrente
-- Transferência da conta corrente para poupança
-- Solicitação de empréstimo com limite de R$ 500,00
-- Visualização de saldo
-- Impressão de extratos bancários
+This project represents an earlier stage of my Java development journey. A new production-oriented banking backend using Java and Spring Boot is planned as a separate project.
 
----
+## Funcionalidades implementadas
 
-## 📌 Estrutura do Projeto
+- cadastro de clientes em memória
+- autenticação simples por nome e senha
+- criação de conta corrente e conta poupança
+- consulta de saldo
+- depósitos e saques
+- transferência da conta corrente para a poupança
+- solicitação e simulação de empréstimo com juros simples de 5%
+- histórico e impressão de extratos
 
-BancoDigital/ ├── SistemaBanco.java ├── Cliente.java ├── Conta.java ├── ContaCorrente.java ├── ContaPoupanca.java
+## Fundamentos de Java demonstrados
 
+- abstração com a classe `Conta`
+- herança em `ContaCorrente` e `ContaPoupanca`
+- polimorfismo pelo contrato `IConta`
+- encapsulamento de cliente, saldo e histórico
+- composição entre cliente, contas e transações
+- coleções com `List`
+- menu interativo com `Scanner`
 
----
+## Estrutura
 
-## 🛠️ Tecnologias Utilizadas
+```text
+src/
+├── SistemaBanco.java    # entrada da aplicação e menus
+├── Cliente.java         # dados e autenticação em memória
+├── IConta.java          # contrato das operações bancárias
+├── Conta.java           # comportamento compartilhado
+├── ContaCorrente.java   # extrato da conta corrente
+├── ContaPoupanca.java   # extrato da poupança
+├── Transacao.java       # registro do histórico
+└── Banco.java           # agregado simples de contas
+```
 
-- Java (JDK 17 ou superior)
-- Scanner para entrada de dados via console
-- Programação orientada a objetos (POO)
+## Como executar
 
----
+### Pré-requisito
 
-## 🏁 Como Executar
+- JDK 17 ou superior
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/BancoDigital.git
-   cd BancoDigital
+Na raiz do projeto:
 
-Compile o código:
-javac *.java
+```bash
+javac -d out src/*.java
+java -cp out SistemaBanco
+```
 
-Execute a aplicação:
-java SistemaBanco
+O diretório `out/` é gerado localmente e deve permanecer fora do Git.
 
+## Testes
 
-✍️ Autor
-Desenvolvido por Renato Boranga 🚀
+O projeto ainda não possui suíte de testes automatizados nem ferramenta de build. A validação atual é feita pela compilação e pelo fluxo interativo no console.
+
+## Limitações conhecidas
+
+- dados existem somente durante a execução
+- senhas permanecem em texto puro na memória do processo
+- valores monetários usam `double`, inadequado para um backend financeiro real
+- não há controle transacional, concorrência, idempotência ou auditoria persistente
+- empréstimos usam uma regra didática simplificada
+
+Essas limitações são mantidas visíveis para não apresentar o projeto acadêmico como uma solução bancária de produção. O backend bancário futuro deverá nascer em outro repositório, com regras e arquitetura próprias.
+
+## Autor
+
+Renato Boranga
